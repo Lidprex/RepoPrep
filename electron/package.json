@@ -1,0 +1,94 @@
+{
+  "name": "repoprep-electron",
+  "productName": "RepoPrep",
+  "version": "2.2.1",
+  "description": "RepoPrep by Lidprex.",
+  "author": "Lidprex",
+  "license": "MIT",
+  "main": "dist-electron/main.js",
+  "type": "commonjs",
+  "scripts": {
+    "build:main": "tsc -p tsconfig.main.json",
+    "build:renderer": "vite build",
+    "build": "npm run build:main && npm run build:renderer",
+    "start": "npm run build && electron .",
+    "dev": "npm run build:main && concurrently -k \"vite\" \"electron .\"",
+    "dist": "npm run build && electron-builder --win"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.0",
+    "electron": "^33.3.1",
+    "electron-builder": "^25.1.8",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.7"
+  },
+  "build": {
+    "appId": "com.lidprex.repoprep",
+"productName": "RepoPrep",
+    "copyright": "Copyright © 2026 Lidprex. All rights reserved.",
+    "directories": {
+      "buildResources": "build",
+      "output": "release"
+    },
+    "files": [
+      "dist-electron/**/*",
+      "dist/**/*",
+      "assets/**/*",
+      "icon.ico"
+    ],
+    "asar": true,
+    "compression": "maximum",
+    "extraResources": [
+      {
+        "from": "../engine",
+        "to": "engine",
+        "filter": [
+          "**/*.py"
+        ]
+      }
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "icon.ico",
+      "electronLanguages": [
+        "en-US",
+        "ar",
+        "ru",
+        "zh-CN"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true,
+      "installerHeader": "build/installerHeader.bmp",
+      "installerSidebar": "build/installerSidebar.bmp",
+      "createDesktopShortcut": false,
+      "createStartMenuShortcut": false,
+      "shortcutName": "RepoPrep",
+      "installerLanguages": [
+        "en_US",
+        "ar_SA",
+        "ru_RU",
+        "zh_CN"
+      ],
+      "displayLanguageSelector": true,
+      "deleteAppDataOnUninstall": false,
+      "include": "build/installer.nsh"
+    }
+  }
+}
