@@ -1,0 +1,27 @@
+﻿Privacy Policy — RepoPrep by Lidprex Labs
+
+Your data belongs to you. RepoPrep operates entirely on your machine with zero telemetry, zero tracking, and zero data collection.
+
+Our Approach to Privacy
+RepoPrep is a desktop application that runs entirely on your local machine. It never phones home, never sends your files to a remote server, and never collects usage statistics. We built this tool for developers who value their privacy as much as their productivity.
+The cleaning engine processes your repository locally. Every operation — flattening, cleaning, scanning — happens within the boundaries of your file system. No data is transmitted over the network at any point during normal operation.
+
+What We Collect
+Absolutely nothing. RepoPrep does not collect, store, or transmit any personal data, usage metrics, crash reports, or analytics.
+No account required. There is no login, no registration, no user profile. Download and run.
+Fully offline. The application does not require internet access. No background services, no update pings, no telemetry.
+
+Your Files
+RepoPrep reads your project files only to analyze their structure and identify build artifacts. It never reads the semantic content of your source code. The file tree is scanned for patterns — node_modules, venv, dist, build artifacts, cache directories — and nothing more.
+When you use the AI Flatten mode, the tool copies your source files into a flat output directory. Both the input and output directories are on your local machine. We have no mechanism to access, copy, or transmit those files.
+
+Third-Party Services
+RepoPrep has zero external dependencies at runtime. The standalone executable contains everything it needs. It does not embed analytics SDKs, crash reporters, or advertising libraries. The only network requests your machine makes are the ones you choose — for example, downloading the application from GitHub Releases or visiting this documentation.
+
+Updates
+RepoPrep does not include an auto-updater. When a new version is released, you can download it manually from the GitHub Releases page. Your existing configuration and cleaned projects are unaffected by upgrading.
+
+Contact
+If you have questions about this privacy policy or the data practices of any Lidprex Labs product, reach out through our main site or open an issue on GitHub.
+
+© 2026 Lidprex Labs — Building products with reputation, not noise.
