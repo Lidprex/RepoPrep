@@ -1,0 +1,18 @@
+# Node / Electron
+electron/node_modules/
+electron/dist/
+electron/dist-electron/
+
+# Python
+__pycache__/
+*.py[cod]
+engine/__pycache__/
+
+# OS junk
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Logs / temp
+*.log
+*.tmp
